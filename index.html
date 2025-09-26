@@ -1,0 +1,110 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FrostQR — Premium QR Code Generator</title>
+  <meta name="description" content="Premium glassmorphism QR code generator — instant, client-side, no storage." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-orb" aria-hidden="true">
+    <div class="orb a"></div>
+    <div class="orb b"></div>
+  </div>
+
+  <main class="app" role="main">
+    <section class="card">
+      <header class="app-head">
+        <div class="logo">FQ</div>
+        <div>
+          <h1>FrostQR — Premium QR Generator</h1>
+          <p class="lead">Instant QR codes, client-side only — customize colors, size, error correction, and download.</p>
+        </div>
+      </header>
+
+      <div class="controls">
+        <div class="field">
+          <label for="text">Enter URL or text</label>
+          <input id="text" type="text" placeholder="https://example.com or any text" autocomplete="off" spellcheck="false" />
+        </div>
+
+        <div class="row">
+          <div class="col field">
+            <label for="size">Size <span id="sizeVal" class="hint">340 px</span></label>
+            <input id="size" type="range" min="128" max="1024" value="340" />
+          </div>
+          <div class="col field">
+            <label for="level">Error correction</label>
+            <select id="level">
+              <option value="H">H — high (better resilience)</option>
+              <option value="Q">Q — quartile</option>
+              <option value="M">M — medium</option>
+              <option value="L">L — low (more capacity)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="options">
+          <div class="field">
+            <label>Foreground</label>
+            <input id="fg" type="color" value="#041026" title="Foreground color" />
+          </div>
+          <div class="field">
+            <label>Background</label>
+            <input id="bg" type="color" value="#ffffff" title="Background color" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Quick presets</label>
+          <div class="actions">
+            <button class="btn ghost" data-sample="https://example.com">Example URL</button>
+            <button class="btn ghost" data-sample="Hello from FrostQR!">Sample text</button>
+            <button class="btn ghost" data-sample="mailto:hello@example.com">Email</button>
+            <button class="btn ghost" data-sample="WIFI:S:MyNetwork;T:WPA;P:mypassword;;">WiFi (WPA)</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Actions</label>
+          <div class="actions">
+            <button id="gen" class="btn">Generate</button>
+            <button id="download" class="btn ghost">Download PNG</button>
+            <button id="copy" class="btn ghost">Copy text</button>
+            <button id="open" class="btn ghost">Open link</button>
+          </div>
+        </div>
+
+        <div class="hint">No data leaves your browser — everything happens locally.</div>
+      </div>
+
+      <footer class="foot">Designed with care • Glassmorphism UI • No tracking</footer>
+    </section>
+
+    <aside class="card preview">
+      <div style="display:flex;align-items:center;gap:12px;width:100%;justify-content:space-between">
+        <div style="display:flex;flex-direction:column">
+          <strong style="font-size:15px">Preview</strong>
+          <span class="hint">Scan with your phone.</span>
+        </div>
+        <div class="qr-meta"><span id="metaSize">340px</span> • <span id="metaLevel">H</span></div>
+      </div>
+
+      <div class="qr-wrap" aria-live="polite">
+        <div id="qrcode" aria-hidden="false"></div>
+      </div>
+
+      <div class="hint" id="previewHint">Generated QR will appear here. Change colors and size as needed.</div>
+    </aside>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- QRCode.js (client-side) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
