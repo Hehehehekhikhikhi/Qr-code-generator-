@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QRGen Pro | Premium QR Code Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+    
+    <header>
+        <nav class="glass-nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-qrcode"></i>
+                    <span>QRGen Pro</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#generator">Generator</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-to">How To</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Create Stunning <span class="gradient-text">QR Codes</span></h1>
+                <p>Transform your URLs, contacts, and information into beautiful, premium QR codes with our advanced generator.</p>
+            </div>
+        </section>
+
+        <section id="generator" class="generator-section">
+            <div class="container">
+                <div class="generator-card glass-card">
+                    <div class="card-header">
+                        <h2>QR Code Generator</h2>
+                        <p>Enter your content below to generate a QR code</p>
+                    </div>
+                    
+                    <div class="generator-content">
+                        <div class="input-section">
+                            <div class="input-group">
+                                <label for="qr-content">Content to encode</label>
+                                <textarea id="qr-content" placeholder="Enter URL, text, or contact information..."></textarea>
+                            </div>
+                            
+                            <div class="options-section">
+                                <h3>Customization Options</h3>
+                                
+                                <div class="options-grid">
+                                    <div class="option-group">
+                                        <label for="qr-size">Size</label>
+                                        <select id="qr-size">
+                                            <option value="200">200x200</option>
+                                            <option value="300" selected>300x300</option>
+                                            <option value="400">400x400</option>
+                                            <option value="500">500x500</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="option-group">
+                                        <label for="qr-color">Color</label>
+                                        <input type="color" id="qr-color" value="#3a86ff">
+                                    </div>
+                                    
+                                    <div class="option-group">
+                                        <label for="qr-bg-color">Background</label>
+                                        <input type="color" id="qr-bg-color" value="#ffffff">
+                                    </div>
+                                    
+                                    <div class="option-group">
+                                        <label for="qr-margin">Margin</label>
+                                        <select id="qr-margin">
+                                            <option value="0">0px</option>
+                                            <option value="10">10px</option>
+                                            <option value="20" selected>20px</option>
+                                            <option value="30">30px</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <button id="generate-btn" class="generate-button">
+                                    <i class="fas fa-magic"></i>
+                                    Generate QR Code
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="preview-section">
+                            <div class="preview-card glass-card">
+                                <h3>QR Code Preview</h3>
+                                <div id="qr-code-container">
+                                    <div class="placeholder">
+                                        <i class="fas fa-qrcode"></i>
+                                        <p>Your QR code will appear here</p>
+                                    </div>
+                                </div>
+                                <div class="preview-actions">
+                                    <button id="download-btn" class="download-button" disabled>
+                                        <i class="fas fa-download"></i>
+                                        Download QR Code
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features-section">
+            <div class="container">
+                <h2 class="section-title">Premium Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>Custom Colors</h3>
+                        <p>Personalize your QR codes with custom colors to match your brand identity.</p>
+                    </div>
+                    
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-expand-alt"></i>
+                        </div>
+                        <h3>Multiple Sizes</h3>
+                        <p>Generate QR codes in various sizes suitable for different applications.</p>
+                    </div>
+                    
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>Instant Generation</h3>
+                        <p>Create QR codes in real-time with our fast and efficient generator.</p>
+                    </div>
+                    
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <h3>High-Quality Download</h3>
+                        <p>Download your QR codes in high-resolution PNG format for professional use.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-to" class="how-to-section">
+            <div class="container">
+                <h2 class="section-title">How To Use</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Enter Your Content</h3>
+                            <p>Type or paste the URL, text, or contact information you want to encode.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Customize Appearance</h3>
+                            <p>Adjust the size, colors, and margins to match your preferences.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Generate & Download</h3>
+                            <p>Click generate and download your QR code in high quality.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-qrcode"></i>
+                    <span>QRGen Pro</span>
+                </div>
+                <p>Premium QR Code Generator &copy; 2023. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
